@@ -1,0 +1,28 @@
+#!/nethome/yezhang_zhu/miniconda3/bin/python
+
+import sys
+EXTEND=int(sys.argv[2])
+
+chromSize={}
+with open(sys.argv[1]) as chromfile:
+	for line in chromfile.readlines():
+		line=line.strip()
+		line_split=line.split('\t')
+		chromSize[line_split[0]]=int(line_split[1])
+
+for line in sys.stdin.readlines():
+	line=line.strip()
+	line_split=line.split('\t')
+	chrom=line_split[0]
+	start=int(line_split[1])
+	end=int(line_split[2])
+	strand=line_split[3]
+	if strand=='+':
+		end=start+EXTEND
+		if end>chromSize[chrom]:
+			end=chromSize[chrom]
+	else:
+		start=end-EXTEND
+		if start<1:
+			start=1
+	print(chrom+'\t'+str(start)+'\t'+str(end))

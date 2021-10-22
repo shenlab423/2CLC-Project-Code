@@ -1,0 +1,1 @@
+##### Scripts used in Yezhang Zhu*, Jiali Yu*, Jiahui Gu*, Chaoran Xue, Long Zhang, et al. (2021) Relaxed 3D genome conformation facilitates the pluripotent to totipotent-like state transition in embryonic stem cells. *Nucleic Acids Research*.
